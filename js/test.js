@@ -141,7 +141,7 @@ const startScanner = () => {
     //barcode read call back
     Quagga.onDetected(function (result) {
 	var code = result.codeResult.code;
-	if (currentCode != code && code.length==13){
+	if (currentCode != code && code.length==13 && code.substr(0,1)=="9"){
 	        document.getElementById( 'sound-file' ).play() ;
 		totalAmount=totalAmount+100;
 		var str = "100";
