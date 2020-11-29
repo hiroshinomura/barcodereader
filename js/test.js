@@ -55,6 +55,13 @@ function bye()
 	speechSynthesis.speak(uttr);
 }
 
+// ビジーwaitを使う方法
+function sleep(waitMsec) {
+  var startMsec = new Date();
+ 
+  // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+  while (new Date() - startMsec < waitMsec);
+}
 
 $(function () {
 
@@ -143,6 +150,9 @@ const startScanner = () => {
 		document.getElementById('code').innerHTML = result.codeResult.code ;
 	        console.log(result.codeResult.code);
 		currentCode = code;
+		Quagga.stop();
+		sleep(1000);
+		Quagga.start()
 	}
     });
 }
