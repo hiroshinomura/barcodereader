@@ -17,9 +17,10 @@ function sound()
 }
 function payment()
 {
-	var str = "お会計は"+totalAmount.toString(10)+"円です。";
+	var str = "The total is "+totalAmount.toString(10)+" yen.";
 	const uttr = new SpeechSynthesisUtterance(str)
 	uttr.pitch = 2.0
+	uttr.lang = "en-US";
 	// 発言を再生 (発言キューに発言を追加)
 	speechSynthesis.speak(uttr)
 
@@ -32,11 +33,12 @@ function zero()
 
 function plus()
 {
-	var str = "アイテムをマニュアルで加えました。";
-	const uttr = new SpeechSynthesisUtterance(str)
-	uttr.pitch = 2.0
+	var str = "An item is manually added.";
+	const uttr = new SpeechSynthesisUtterance(str);
+	uttr.pitch = 2.0;
+	uttr.lang = "en-US";
 	// 発言を再生 (発言キューに発言を追加)
-	speechSynthesis.speak(uttr)
+	speechSynthesis.speak(uttr);
 
 	totalAmount = totalAmount + 100;
 	document.getElementById('total').innerHTML = totalAmount ;
