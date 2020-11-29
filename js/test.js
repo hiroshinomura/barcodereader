@@ -19,7 +19,7 @@ function payment()
 {
 	var str = "The total is "+totalAmount.toString(10)+" yen.";
 	const uttr = new SpeechSynthesisUtterance(str)
-	uttr.pitch = 2.0
+	uttr.pitch = 1.5
 	uttr.lang = "en-US";
 	// 発言を再生 (発言キューに発言を追加)
 	speechSynthesis.speak(uttr)
@@ -35,13 +35,23 @@ function plus()
 {
 	var str = "An item is manually added.";
 	const uttr = new SpeechSynthesisUtterance(str);
-	uttr.pitch = 2.0;
+	uttr.pitch = 1.5;
 	uttr.lang = "en-US";
 	// 発言を再生 (発言キューに発言を追加)
 	speechSynthesis.speak(uttr);
 
 	totalAmount = totalAmount + 100;
 	document.getElementById('total').innerHTML = totalAmount ;
+}
+
+function bye()
+{
+	var str = "Thank you for coming to Nomura bookstore. I really appreciate your buying many books. See you next time. Bye!";
+	const uttr = new SpeechSynthesisUtterance(str);
+	uttr.pitch = 1.5;
+	uttr.lang = "en-US";
+	// 発言を再生 (発言キューに発言を追加)
+	speechSynthesis.speak(uttr);
 }
 
 
