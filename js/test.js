@@ -150,9 +150,6 @@ const startScanner = () => {
 		document.getElementById('code').innerHTML = result.codeResult.code ;
 	        console.log(result.codeResult.code);
 		currentCode = code;
-		Quagga.stop();
-		sleep(1000);
-		Quagga.start()
 	}
     });
 }
