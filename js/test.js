@@ -1,7 +1,7 @@
 function sound()
 {
 	// 対象となるID名
-	var id = 'sound-file' ;
+	var id = 'welcome-file' ;
 
 	// 初回以外だったら音声ファイルを巻き戻す
 	if( typeof( document.getElementById( id ).currentTime ) != 'undefined' )
