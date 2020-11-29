@@ -1,4 +1,5 @@
 var totalAmount = 0;
+var currentCode = "";
 function sound()
 {
 	// ‘ÎÛ‚Æ‚È‚éID–¼
@@ -132,12 +133,15 @@ const startScanner = () => {
 
     //barcode read call back
     Quagga.onDetected(function (result) {
-        document.getElementById( 'sound-file' ).play() ;
-	totalAmount=totalAmount+100;
-	var str = "100";
-        //document.getElementById('total').innerHTML = str ;
-	document.getElementById('total').innerHTML = totalAmount ;
-	document.getElementById('code').innerHTML = result.codeResult.code ;
-        console.log(result.codeResult.code);
+	var code = result.codeResult.code;
+	if (currentCode != code){
+	        document.getElementById( 'sound-file' ).play() ;
+		totalAmount=totalAmount+100;
+		var str = "100";
+	        //document.getElementById('total').innerHTML = str ;
+		document.getElementById('total').innerHTML = totalAmount ;
+		document.getElementById('code').innerHTML = result.codeResult.code ;
+	        console.log(result.codeResult.code);
+	}
     });
 }
