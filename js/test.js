@@ -32,6 +32,12 @@ function zero()
 
 function plus()
 {
+	var str = "アイテムをマニュアルで加えました。";
+	const uttr = new SpeechSynthesisUtterance(str)
+	uttr.pitch = 2.0
+	// 発言を再生 (発言キューに発言を追加)
+	speechSynthesis.speak(uttr)
+
 	totalAmount = totalAmount + 100;
 	document.getElementById('total').innerHTML = totalAmount ;
 }
