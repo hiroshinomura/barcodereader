@@ -146,6 +146,7 @@ const startScanner = () => {
 	var str = "100";
         //document.getElementById('total').innerHTML = str ;
 	document.getElementById('total').innerHTML = totalAmount ;
+	document.getElementById('code').innerHTML = result.codeResult.code ;
         console.log(result.codeResult.code);
     });
 }
