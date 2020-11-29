@@ -142,6 +142,7 @@ const startScanner = () => {
 		document.getElementById('total').innerHTML = totalAmount ;
 		document.getElementById('code').innerHTML = result.codeResult.code ;
 	        console.log(result.codeResult.code);
+		currentCode = code;
 	}
     });
 }
