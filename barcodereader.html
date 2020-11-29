@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/test.css" />
+    </head>
+    <body>
+        <h3>バーコード</h3>
+	<p><a onClick="sound()">このテキストを押すと挨拶します！</a></p>
+        <div id="photo-area" class="viewport"></div>
+	<audio id="sound-file" preload="auto">
+		<source src="./decision1.mp3" type="audio/mp3">
+	</audio>
+	<audio id="welcome-file" preload="auto">
+		<source src="./welcome.mp3" type="audio/mp3">
+	</audio>
+
+        <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="js/quagga.min.js" type="text/javascript"></script>
+        <script src="js/test.js" type="text/javascript"></script>
+	<script src="sounds-barrage.js"></script>
+
+    </body>
+</html>
