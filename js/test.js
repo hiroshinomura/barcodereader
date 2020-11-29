@@ -1,3 +1,4 @@
+var totalAmount = 0;
 function sound()
 {
 	// 対象となるID名
@@ -11,7 +12,30 @@ function sound()
 
 	// [ID:sound-file]の音声ファイルを再生[play()]する
 	document.getElementById( id ).play() ;
+
+
 }
+function payment()
+{
+	var str = "お会計は"+totalAmount.toString(10)+"円です。";
+	const uttr = new SpeechSynthesisUtterance(str)
+	uttr.pitch = 2.0
+	// 発言を再生 (発言キューに発言を追加)
+	speechSynthesis.speak(uttr)
+
+}
+function zero()
+{
+	totalAmount = 0;
+	document.getElementById('total').innerHTML = totalAmount ;
+}
+
+function plus()
+{
+	totalAmount = totalAmount + 100;
+	document.getElementById('total').innerHTML = totalAmount ;
+}
+
 
 $(function () {
 
@@ -100,6 +124,10 @@ const startScanner = () => {
     //barcode read call back
     Quagga.onDetected(function (result) {
         document.getElementById( 'sound-file' ).play() ;
+	totalAmount=totalAmount+100;
+	var str = "100";
+        //document.getElementById('total').innerHTML = str ;
+	document.getElementById('total').innerHTML = totalAmount ;
         console.log(result.codeResult.code);
     });
 }
